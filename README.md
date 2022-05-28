@@ -1,7 +1,7 @@
 # Pacman Game
 
 1. -[x] Project Setup
-2. -[] Generate Map boundaries
+2. -[x] Generate Map boundaries
 3. -[] Add Pacman with movement
 4. -[] Add collision detection
 5. -[] Swap boundaries with images
