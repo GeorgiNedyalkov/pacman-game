@@ -75,6 +75,8 @@ const keys = {
 
 }
 
+let lastKey = '';
+
 const map = [
     ['-', '-', '-', '-', '-', '-'],
     ['-', ' ', ' ', ' ', ' ', '-'],
@@ -109,7 +111,18 @@ function animate() {
     });
 
     player.update();
+    player.velocity.y = 0;
+    player.velocity.x = 0;
 
+    if (keys.w.pressed && lastKey === "w") {
+        player.velocity.y = -5;
+    } else if (keys.a.pressed && lastKey === "a") {
+        player.velocity.x = -5;
+    } else if (keys.s.pressed && lastKey === "s") {
+        player.velocity.y = 5;
+    } else if (keys.d.pressed && lastKey === "d") {
+        player.velocity.x = 5;
+    }
 }
 
 animate();
@@ -119,20 +132,24 @@ addEventListener('keydown', ({ key }) => {
     switch (key) {
         case 'w':
             keys.w.pressed = true;
+            lastKey = 'w';
             break;
         case 'a':
             keys.a.pressed = true;
+            lastKey = 'a';
             break;
         case 's':
             keys.s.pressed = true;
+            lastKey = 's';
             break;
         case 'd':
             keys.d.pressed = true;
+            lastKey = 'd';
             break;
     }
 
-    console.log(player.d.pressed);
-    console.log(player.s.pressed);
+    console.log(keys.d.pressed);
+    console.log(keys.s.pressed);
 });
 
 addEventListener('keyup', ({ key }) => {
@@ -151,6 +168,6 @@ addEventListener('keyup', ({ key }) => {
             break;
     }
 
-    console.log(player.d.pressed);
-    console.log(player.s.pressed);
+    console.log(keys.d.pressed);
+    console.log(keys.s.pressed);
 });

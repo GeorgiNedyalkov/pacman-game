@@ -2,7 +2,7 @@
 
 1. -[x] Project Setup
 2. -[x] Generate Map boundaries
-3. -[] Add Pacman with movement
+3. -[x] Add Pacman with movement
 4. -[] Add collision detection
 5. -[] Swap boundaries with images
 6. -[] Generate pellets
